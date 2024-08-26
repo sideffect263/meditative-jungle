@@ -1,6 +1,9 @@
-// src/components/BreathingGuide.js
 import React, { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, extend } from '@react-three/fiber';
+import { SphereGeometry } from 'three'; // Import SphereGeometry from THREE
+
+// Extend the THREE namespace with the SphereGeometry
+extend({ SphereGeometry });
 
 const BreathingGuide = () => {
   const breathingOrb = useRef();
@@ -12,7 +15,7 @@ const BreathingGuide = () => {
 
   return (
     <mesh ref={breathingOrb} position={[0, 0, -1]}>
-      <sphereBufferGeometry args={[0.5, 32, 32]} />
+      <sphereGeometry args={[0.5, 32, 32]} /> {/* Use sphereGeometry here */}
       <meshStandardMaterial color="lightblue" />
     </mesh>
   );

@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import meditating_figure_model from '../models/meditating-figure.glb';
 import jungle_trees_model from '../models/jungle-trees.glb';
 import HoverEffect from './HoverEffect'; // Import the new HoverEffect component
+import BreathingGuide from './BreathingGuide'; // Import the new BreathingGuide component
 
 const MeditationFigure = () => {
   const gltf = useLoader(GLTFLoader, meditating_figure_model);
@@ -40,6 +41,7 @@ const MeditationScene = () => {
       <MeditationFigure />
       <HoverEffect /> {/* Add the HoverEffect below the model */}
       <JungleEnvironment />
+      <BreathingGuide /> {/* Add the BreathingGuide below the jungle environment */}
     </>
   );
 };
